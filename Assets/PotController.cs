@@ -95,13 +95,22 @@ public class PotController : MonoBehaviour
 
         GameObject potionGameObject = Instantiate(potionPrefab, transform.position, Quaternion.identity);
         potionHolder.transform.GetComponent<ItemSlot>().DropIntoSlot(potionGameObject);
+        
 
         BottledPotionController bottledPotionContr = potionGameObject.transform.GetComponent<BottledPotionController>();
-        bottledPotionContr.bottleName = "RandomName";
+        //bottledPotionContr.CacheReadyPotionData();
+
+        RequestedPotion newPotion = new RequestedPotion();
+
+        newPotion.potionName = "New Potion";
         foreach (GameObject usedIngredient in potIngredients)
         {
-            string ingrName = usedIngredient.transform.GetComponent<IngredientController>().GetIngredientName();
-            bottledPotionContr.allIngredients.Add(ingrName);
+            IngredientController ingredientContr = usedIngredient.GetComponent<IngredientController>();
+            newPotion.herbs.Add(ingredientContr.GetHerbId());
+            newPotion.herbState.Add(ingredientContr.GetWorkState());
         }
+
+        bottledPotionContr.CacheReadyPotionData(newPotion);
+
     }
 }

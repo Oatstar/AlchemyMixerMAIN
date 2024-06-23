@@ -10,6 +10,7 @@ TagManager:
   - Ingredient
   - Potion
   - PotionHolder
+  - ReturnBox
   layers:
   - Default
   - TransparentFX

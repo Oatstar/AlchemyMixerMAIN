@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class IngredientController : MonoBehaviour
 {
-    [SerializeField] string ingredientName = "Herb";
+    //[SerializeField] string ingredientName = "Mynt"; //Mynt, Saph, Thym, Blis, Neth
+    [SerializeField] int herbId= 1; //1,2,3,4,5
     [SerializeField] int state = 0; //0 default, 1 crushed, 2 chopped, 3 dried
     [SerializeField] bool inWork = false; //true if in a workstation or pot and being worked on.
+
+    private void Awake()
+    {
+    }
+
+    public void SetStartValues()
+    {
+        herbId = Random.Range(1, 6);
+    }
 
     public void SetWorkState(int stateId)
     {
@@ -20,10 +30,11 @@ public class IngredientController : MonoBehaviour
         return state;
     }
 
-    public string GetIngredientName()
+    public int GetHerbId()
     {
-        return ingredientName;
+        return herbId;
     }
+
 
     void ChangeGraphics()
     {

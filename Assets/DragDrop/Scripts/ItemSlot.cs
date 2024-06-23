@@ -47,6 +47,10 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             {
                 eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
             }
+            else if (this.tag == "ReturnBox" && eventData.pointerDrag.tag != "Potion")
+            {
+                eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
+            }
             else
             {
                 DropIntoSlot(eventData.pointerDrag);
@@ -75,6 +79,10 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
         if (this.tag == "Pot")
         {
             GetComponent<PotController>().AddIngredient(item);
+        }
+        if (this.tag == "ReturnBox")
+        {
+            GetComponentInParent<RequestCardController>().ReturnOrder(item);
         }
     }
 
