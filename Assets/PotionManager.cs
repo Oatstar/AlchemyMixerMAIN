@@ -30,7 +30,7 @@ public class PotionManager : MonoBehaviour
     void Start()
     {
         tempNameList.AddRange(potionNameList);
-        UnityEngine.Random.InitState(seed);
+        //UnityEngine.Random.InitState(seed);
         CreateAllPotions();
     }
 
@@ -62,8 +62,8 @@ public class PotionManager : MonoBehaviour
             int loopBreaker = 0;
             do
             {
-                herb = UnityEngine.Random.Range(1, 5);
-                herbState = UnityEngine.Random.Range(0, 3);
+                herb = UnityEngine.Random.Range(0, 5);
+                herbState = UnityEngine.Random.Range(0, 4);
 
                 combination = herb.ToString() + "," + herbState.ToString();
 
@@ -75,8 +75,8 @@ public class PotionManager : MonoBehaviour
 
             usedCombinations.Add(combination);
 
-            newPotion.herbs.Add(herb);
-            newPotion.herbState.Add(herbState);
+            Herb newHerb = new Herb();
+            newPotion.herbs.Add(newHerb);
         }
 
         if(potionLevel == 5)
@@ -102,8 +102,7 @@ public class PotionManager : MonoBehaviour
 public class RequestedPotion
 {
     public string potionName = "";
-    public List<int> herbs = new List<int> { };
-    public List<int> herbState = new List<int> { };
+    public List<Herb> herbs = new List<Herb> { };
     public int boilLevel; //0, 1, 2, 3
     public int potionLevel; //(2,3,4,5);
 }

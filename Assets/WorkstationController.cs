@@ -65,8 +65,9 @@ public class WorkstationController : MonoBehaviour
     {
         working = false;
         ready = true;
+        
 
-        if(this.name == "MortarPestle")
+        if (this.name == "MortarPestle")
         {
             currentIngredient.GetComponent<IngredientController>().SetWorkState(1);
         }

@@ -106,8 +106,10 @@ public class PotController : MonoBehaviour
         foreach (GameObject usedIngredient in potIngredients)
         {
             IngredientController ingredientContr = usedIngredient.GetComponent<IngredientController>();
-            newPotion.herbs.Add(ingredientContr.GetHerbId());
-            newPotion.herbState.Add(ingredientContr.GetWorkState());
+            Herb currentHerb = ingredientContr.GetThisHerb();
+            newPotion.herbs.Add(currentHerb);
+            //newPotion.herbs.Add(ingredientContr.GetHerbId());
+            //newPotion.herbState.Add(ingredientContr.GetWorkState());
         }
 
         bottledPotionContr.CacheReadyPotionData(newPotion);

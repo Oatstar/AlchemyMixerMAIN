@@ -48,6 +48,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         {
             originalParent.transform.GetComponent<WorkstationController>().ItemRemoved();
         }
+        if (originalParent.tag == "Pot")
+        {
+            originalParent.transform.GetComponent<PotController>().RemoveIngredient(this.gameObject);
+        }
     }
 
     public void OnDrag(PointerEventData eventData) {

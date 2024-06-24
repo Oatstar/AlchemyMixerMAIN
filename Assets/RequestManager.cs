@@ -18,6 +18,5 @@ public class RequestManager : MonoBehaviour
 
         RequestedPotion requestedPotion = potionMan.GetNewRecipeRequest();
         newRequestCard.transform.GetComponent<RequestCardController>().SetRequestValues(requestedPotion);
-        
     }
 }

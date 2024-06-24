@@ -64,8 +64,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
         item.transform.SetParent(this.transform, false);
         item.transform.localPosition = new Vector3(0, 0, 0);
 
-        RectTransform rect = item.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(40, 40);
+        //RectTransform rect = item.GetComponent<RectTransform>();
+        //rect.sizeDelta = new Vector2(40, 40);
         //RectTransform rect = item.transform.GetComponent<RectTransform>();
         //rect.anchoredPosition = new Vector2(25, 25); // posX 0, posY 0
         //rect.sizeDelta = new Vector2(25, 25);    // width 100, height 100
