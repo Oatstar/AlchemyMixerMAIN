@@ -114,8 +114,7 @@ public class PotController : MonoBehaviour
             //newPotion.herbState.Add(ingredientContr.GetWorkState());
         }
 
-        potionMan.CompareIngredientsAndGetPotionName(newPotion);
-        
+        newPotion.potionName = potionMan.CompareIngredientsAndGetPotionName(newPotion);
 
         bottledPotionContr.CacheReadyPotionData(newPotion);
 
