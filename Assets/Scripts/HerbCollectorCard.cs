@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HerbCollectorCard : MonoBehaviour
 {
     private int[] herbs = new int[3]; // Array to store the herbs (0, 1, 2, 3, 4)
+
+    [SerializeField] Image[] herbImageObjects = new Image[3];
+    [SerializeField] Sprite questionMarkSprite;
 
     // Method to set start values for spots 0 and 1
     public void SetStartValues()
@@ -10,23 +14,26 @@ public class HerbCollectorCard : MonoBehaviour
         // Assign random herbs to spots 0 and 1
         herbs[0] = Random.Range(0, 5); // Herb 0 to 4
         herbs[1] = Random.Range(0, 5); // Herb 0 to 4
+        SetHerbGraphics();
     }
 
     // Method to set herb graphics for spots 0 and 1
-    public void SetHerbGraphics(int herb1, int herb2)
+    public void SetHerbGraphics()
     {
-        // Set graphics for spot 0 (herb1) and spot 1 (herb2)
-        // Example: Replace with your logic to set sprite graphics
-        Debug.Log("Setting graphics for spot 0 with herb: " + herb1);
-        Debug.Log("Setting graphics for spot 1 with herb: " + herb2);
+        herbImageObjects[0].sprite = HerbManager.instance.GetHerbImage(herbs[0], 0);
+        herbImageObjects[1].sprite = HerbManager.instance.GetHerbImage(herbs[1], 0);
+        herbImageObjects[2].sprite = questionMarkSprite;
     }
 
-    // Method to get herb at specified spot index
     public int GetHerb(int spotIndex)
     {
-        // Replace with logic to return actual herb values
-        // For example, return this.herbs[spotIndex];
-        return herbs[spotIndex]; // Example placeholder
+
+        return herbs[spotIndex];
+    }
+
+    public void CardClicked()
+    {
+        HerbCollectorManager.instance.HerbCollectorCardClicked(this);
     }
 
     // Additional methods as needed

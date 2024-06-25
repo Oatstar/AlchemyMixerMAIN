@@ -12,6 +12,16 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             string text = GetComponent<IngredientController>().GetIngredientName();
             Tooltip.ShowTooltip_Static(text);
         }
+        else if (this.tag == "Potion")
+        {
+            string text = GetComponent<BottledPotionController>().GetRequestedPotionData().potionName;
+            Tooltip.ShowTooltip_Static(text);
+        }
+        else if (this.tag == "HerbCard")
+        {
+            string text = "Buy a bundle of herbs for 4g";
+            Tooltip.ShowTooltip_Static(text);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

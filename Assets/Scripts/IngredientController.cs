@@ -19,12 +19,17 @@ public class IngredientController : MonoBehaviour
         herbImage = GetComponent<Image>();
     }
 
-    public void SetStartValues()
+    public void SetStartValues(int spawnHerbId = -1)
     {
         thisHerb = new Herb();
-        thisHerb.herbId = Random.Range(0, 5);
+
+        if (spawnHerbId == -1)
+            thisHerb.herbId = Random.Range(0, 5);
+        else
+            thisHerb.herbId = spawnHerbId;
+
         //herbId = 
-        
+
         RefreshName();
         RefreshHerbGraphics();
     }

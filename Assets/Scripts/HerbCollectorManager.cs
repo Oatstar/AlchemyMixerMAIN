@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HerbCollectorManager : MonoBehaviour
 {
@@ -9,6 +10,17 @@ public class HerbCollectorManager : MonoBehaviour
 
     private List<HerbCollectorCard> collectorCards = new List<HerbCollectorCard>();
 
+    public static HerbCollectorManager instance;
+    [SerializeField] Slider slider;
+
+    [SerializeField] float cardTimer = 0f;
+    float cardSpawnInterval = 20f;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         // Instantiate initial cards
@@ -16,6 +28,23 @@ public class HerbCollectorManager : MonoBehaviour
         {
             InstantiateCard();
         }
+    }
+
+    private void Update()
+    {
+        cardTimer += Time.deltaTime;
+        slider.value = cardTimer;
+
+        if(cardTimer >= cardSpawnInterval)
+        {
+            cardTimer = 0;
+
+            if (collectorCardContainer.childCount < 3)
+            {
+                InstantiateCard();
+            }
+        }
+
     }
 
     // Instantiate a new HerbCollectorCard
@@ -32,7 +61,17 @@ public class HerbCollectorManager : MonoBehaviour
     }
 
     // Called when a card is clicked
-    public List<int> ReceiveHerbs(HerbCollectorCard clickedCard)
+    public void HerbCollectorCardClicked(HerbCollectorCard herbCardContr)
+    {
+        if (HerbManager.instance.CountFreeInventorySlots() < 3)
+            Debug.Log("Inventory full");
+        else
+        {
+            ReceiveHerbs(herbCardContr);
+        }
+    }
+
+    public void ReceiveHerbs(HerbCollectorCard clickedCard)
     {
         List<int> herbsReceived = new List<int>();
 
@@ -41,19 +80,13 @@ public class HerbCollectorManager : MonoBehaviour
         herbsReceived.Add(clickedCard.GetHerb(1));
 
         // Add wild card (spot 2)
-        int wildCard = GetWildCard(); // Get wild card value
+        int wildCard = Random.Range(0, 5); // Get wild card value
         herbsReceived.Add(wildCard);
 
+        HerbManager.instance.SpawnMultipleHerbs(herbsReceived);
         // Create a new card to replace the clicked card
-        InstantiateCard();
 
-        // Return list of received herbs
-        return herbsReceived;
     }
 
-    // Get wild card value (handled in manager)
-    private int GetWildCard()
-    {
-        return Random.Range(0, 5); // Herb 0 to 4
-    }
+
 }

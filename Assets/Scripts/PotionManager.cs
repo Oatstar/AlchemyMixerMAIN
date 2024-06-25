@@ -19,12 +19,14 @@ public class PotionManager : MonoBehaviour
         "Steadfastness","Haste","Resistance","Escape","Empathy","Balance","Clarity","Precision","Serenity","Fortification","Transmutation","Adaptation",
         "Deflection","Persistence","Immunity","Invigoration","Reinforcement","Secrecy","Tranquility","Vigilance","Warmth","Wisdom","Enlightenment"
     };
+    #endregion
+
     [SerializeField] List<string> tempNameList = new List<string>();
     HashSet<string> usedCombinations = new HashSet<string>(); // Track used combinations
 
 
-    #endregion
     [SerializeField] List<RequestedPotion> allRequestablePotions = new List<RequestedPotion>() { };
+    [SerializeField] List<RequestedPotion> staticPotionList = new List<RequestedPotion>() { };
     [SerializeField] List<RequestedPotion> requestedPotions = new List<RequestedPotion>() { };
 
     void Start()
@@ -45,6 +47,8 @@ public class PotionManager : MonoBehaviour
 
         //Only 1 level 5 potion
         CreatePotion(5);
+
+        staticPotionList.AddRange(allRequestablePotions);
     }
 
     void CreatePotion(int potionLevel)
@@ -76,6 +80,9 @@ public class PotionManager : MonoBehaviour
             usedCombinations.Add(combination);
 
             Herb newHerb = new Herb();
+            newHerb.herbId = herb;
+            newHerb.herbState = herbState;
+
             newPotion.herbs.Add(newHerb);
         }
 
@@ -96,31 +103,51 @@ public class PotionManager : MonoBehaviour
 
     public string CompareIngredientsAndGetPotionName(RequestedPotion newPotion)
     {
-        foreach (RequestedPotion potion in allRequestablePotions)
+        foreach (RequestedPotion potion in staticPotionList)
         {
             if (potion.herbs.Count == newPotion.herbs.Count)
             {
-                bool match = true;
-                List<Herb> tempHerbs = new List<Herb>(potion.herbs);
-    
-                foreach (Herb herb in newPotion.herbs)
+                List<Herb> tempHerbsNewPotion = new List<Herb>(newPotion.herbs);
+                List<Herb> tempHerbsComparePotion = new List<Herb>(potion.herbs);
+
+                tempHerbsNewPotion.Sort((h1, h2) =>
                 {
-                    Herb matchHerb = tempHerbs.Find(h => h.herbId == herb.herbId && h.workState == herb.workState);
-                    if (matchHerb != null)
+                    int idComparison = h1.herbId.CompareTo(h2.herbId);
+                    if (idComparison == 0)
                     {
-                        tempHerbs.Remove(matchHerb);
+                        return h1.herbState.CompareTo(h2.herbState);
                     }
-                    else
+                    return idComparison;
+                });
+
+                tempHerbsComparePotion.Sort((h1, h2) =>
+                {
+                    int idComparison = h1.herbId.CompareTo(h2.herbId);
+                    if (idComparison == 0)
+                    {
+                        return h1.herbState.CompareTo(h2.herbState);
+                    }
+                    return idComparison;
+                });
+
+                // Compare sorted lists
+                bool match = true;
+                for (int i = 0; i < tempHerbsComparePotion.Count; i++)
+                {
+                    if (tempHerbsComparePotion[i].herbId != tempHerbsNewPotion[i].herbId ||
+                        tempHerbsComparePotion[i].herbState != tempHerbsNewPotion[i].herbState)
                     {
                         match = false;
                         break;
                     }
                 }
-    
-                if (match && tempHerbs.Count == 0)
+
+                // If all herbs matched, return the potion name
+                if (match)
                 {
                     return potion.potionName;
                 }
+
             }
         }
     return "Unknown Potion";

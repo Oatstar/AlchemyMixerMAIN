@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PotController : MonoBehaviour
 {
-    PotionManager potionMan;
+    [SerializeField] PotionManager potionMan;
 
     [SerializeField] List<GameObject> potIngredients = new List<GameObject> { };
     [SerializeField] GameObject boilingIcon;

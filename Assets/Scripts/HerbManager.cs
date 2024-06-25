@@ -51,7 +51,15 @@ public class HerbManager : MonoBehaviour
         }
     }
 
-    public void SpawnHerb()
+    public void SpawnMultipleHerbs(List<int> multipleHerbs)
+    {
+        for (int i = 0; i < multipleHerbs.Count; i++)
+        {
+            HerbManager.instance.SpawnHerb(multipleHerbs[i]);
+        }
+    }
+
+    public void SpawnHerb(int spawnHerbId = -1)
     {
         foreach (Transform inventorySlot in inventoryContainer.transform)
         {
@@ -64,8 +72,23 @@ public class HerbManager : MonoBehaviour
         }
 
         GameObject spawnedHerb = Instantiate(herbPrefab, transform.position, Quaternion.identity);
-        spawnedHerb.transform.GetComponent<IngredientController>().SetStartValues();
+        spawnedHerb.transform.GetComponent<IngredientController>().SetStartValues(spawnHerbId);
         chosenInventorySlotScript.DropIntoSlot(spawnedHerb);
+    }
+
+    public int CountFreeInventorySlots()
+    {
+        int freeSlotCount = 20;
+        foreach (Transform inventorySlot in inventoryContainer.transform)
+        {
+            chosenInventorySlotScript = inventorySlot.transform.GetComponent<ItemSlot>();
+            if (!chosenInventorySlotScript.GetSlotFull())
+            {
+                freeSlotCount--;
+            }
+        }
+
+        return freeSlotCount;
     }
 
     public Sprite GetHerbImage(int herbId, int herbState)
