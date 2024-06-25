@@ -8,15 +8,15 @@ public class BottledPotionController : MonoBehaviour
     public List<string> allIngredients = new List<string>();
     public List<Herb> allUsedHerbs= new List<Herb>();
 
-    [SerializeField] RequestedPotion requestedPot; 
+    [SerializeField] RequestedPotion thisPotionData; 
 
     public void CacheReadyPotionData(RequestedPotion newPot)
     {
-        requestedPot = newPot;
+        thisPotionData = newPot;
     }
 
     public RequestedPotion GetRequestedPotionData()
     {
-        return requestedPot;
+        return thisPotionData;
     }
 }
