@@ -36,5 +36,8 @@ public class HerbCollectorCard : MonoBehaviour
         HerbCollectorManager.instance.HerbCollectorCardClicked(this);
     }
 
-    // Additional methods as needed
+    public void DestroySelf()
+    {
+        Destroy(this.gameObject);
+    }
 }

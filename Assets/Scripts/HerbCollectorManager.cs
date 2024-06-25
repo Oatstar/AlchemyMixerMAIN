@@ -15,6 +15,7 @@ public class HerbCollectorManager : MonoBehaviour
 
     [SerializeField] float cardTimer = 0f;
     float cardSpawnInterval = 20f;
+    int cardPrice = 4;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class HerbCollectorManager : MonoBehaviour
 
             if (collectorCardContainer.childCount < 3)
             {
+                Debug.Log("CollectorCardContainer childcount is: " + collectorCardContainer.childCount);
                 InstantiateCard();
             }
         }
@@ -63,8 +65,21 @@ public class HerbCollectorManager : MonoBehaviour
     // Called when a card is clicked
     public void HerbCollectorCardClicked(HerbCollectorCard herbCardContr)
     {
+        if(GameMasterManager.instance.GetPlayerMoney() < cardPrice)
+        {
+            Debug.Log("Not enough money");
+            InfoTextPopupManager.instance.SpawnInfoTextPopup("Not enough money");
+            return;
+        }
+
+        int freeSlots = HerbManager.instance.CountFreeInventorySlots();
+        Debug.Log("Freeslots: " + freeSlots);
+
         if (HerbManager.instance.CountFreeInventorySlots() < 3)
+        {
             Debug.Log("Inventory full");
+            InfoTextPopupManager.instance.SpawnInfoTextPopup("Inventory full");
+        }
         else
         {
             ReceiveHerbs(herbCardContr);
@@ -73,6 +88,8 @@ public class HerbCollectorManager : MonoBehaviour
 
     public void ReceiveHerbs(HerbCollectorCard clickedCard)
     {
+        InfoTextPopupManager.instance.SpawnInfoTextPopup("Bought herbs for 4 gold");
+        GameMasterManager.instance.AddMoney(-4);
         List<int> herbsReceived = new List<int>();
 
         // Add herbs from spots 0 and 1
@@ -80,13 +97,11 @@ public class HerbCollectorManager : MonoBehaviour
         herbsReceived.Add(clickedCard.GetHerb(1));
 
         // Add wild card (spot 2)
-        int wildCard = Random.Range(0, 5); // Get wild card value
+        int wildCard = Random.Range(0, 5);
         herbsReceived.Add(wildCard);
 
         HerbManager.instance.SpawnMultipleHerbs(herbsReceived);
-        // Create a new card to replace the clicked card
-
+        clickedCard.DestroySelf();
     }
-
 
 }

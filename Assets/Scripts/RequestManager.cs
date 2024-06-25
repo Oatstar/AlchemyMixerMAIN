@@ -28,12 +28,16 @@ public class RequestManager : MonoBehaviour
     {
         Debug.Log("CORRECT potion received");
 
-        GameMasterManager.instance.ReceiveMoney(potion.potionLevel + 2);
+        int moneyGained = potion.potionLevel + 2;
+        GameMasterManager.instance.ReceiveMoney(moneyGained);
+
+        InfoTextPopupManager.instance.SpawnInfoTextPopup("Correct potion! Gained " + moneyGained + "g");
     }
 
     public void IncorrectPotionReturned()
     {
         Debug.Log("INCORRECT potion received");
+        InfoTextPopupManager.instance.SpawnInfoTextPopup("Incorrect potion! Lost the deal");
 
     }
 }

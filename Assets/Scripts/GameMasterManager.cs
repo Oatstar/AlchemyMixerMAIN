@@ -5,17 +5,16 @@ using UnityEngine;
 public class GameMasterManager : MonoBehaviour
 {
     [SerializeField] uiManager uiMan;
+    [SerializeField] PotionManager potionMan;
+    [SerializeField] RequestManager requestMan;
 
     float gameTime = 0f;
     float potionOrderTimer = 0f;
     float potionOrderInterval = 30f;
 
-    [SerializeField] PotionManager potionMan;
-    [SerializeField] RequestManager requestMan;
-
     public static GameMasterManager instance;
 
-    int playerMoney = 10;
+    [SerializeField] int playerMoney = 10;
     
 
     private void Awake()
@@ -54,5 +53,15 @@ public class GameMasterManager : MonoBehaviour
     public int GetPlayerMoney()
     {
         return playerMoney;
+    }
+
+    public void AddMoney(int moneyAmount)
+    {
+        playerMoney += moneyAmount;
+
+        if(moneyAmount < 0)
+        {
+            Debug.Log("Removed money from player: " + moneyAmount);
+        }
     }
 }

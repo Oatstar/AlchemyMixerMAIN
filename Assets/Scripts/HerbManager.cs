@@ -82,8 +82,9 @@ public class HerbManager : MonoBehaviour
         foreach (Transform inventorySlot in inventoryContainer.transform)
         {
             chosenInventorySlotScript = inventorySlot.transform.GetComponent<ItemSlot>();
-            if (!chosenInventorySlotScript.GetSlotFull())
+            if (chosenInventorySlotScript.GetSlotFull())
             {
+                //If chosen inventory slot is full
                 freeSlotCount--;
             }
         }
@@ -96,22 +97,22 @@ public class HerbManager : MonoBehaviour
         switch (herbId)
         {
             case 0:
-                Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
+                //Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
                 return Herb0_Images[herbState];
             case 1:
-                Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
+                //Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
                 return Herb1_Images[herbState];
             case 2:
-                Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
+                //Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
                 return Herb2_Images[herbState];
             case 3:
-                Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
+                //Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
                 return Herb3_Images[herbState];
             case 4:
-                Debug.Log("returning herb " + herbId + " images at herbstate "+herbState);
+                //Debug.Log("returning herb " + herbId + " images at herbstate "+herbState);
                 return Herb4_Images[herbState];
             default:
-                Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
+                //Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
                 return Herb0_Images[0];
         }
     }

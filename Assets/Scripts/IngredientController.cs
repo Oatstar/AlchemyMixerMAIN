@@ -38,12 +38,12 @@ public class IngredientController : MonoBehaviour
     {
         Sprite herbSprite = HerbManager.instance.GetHerbImage(thisHerb.herbId, thisHerb.herbState);
         herbImage.sprite = herbSprite;
-        Debug.Log("Herb image sprite updated");
+        //Debug.Log("Herb image sprite updated");
     }
 
     public void SetWorkState(int stateId)
     {
-        Debug.Log("Herb state change from " + thisHerb.herbState + " to " + stateId);
+        //Debug.Log("Herb state change from " + thisHerb.herbState + " to " + stateId);
         thisHerb.herbState = stateId;
         RefreshHerbGraphics();
         RefreshName();
