@@ -24,10 +24,8 @@ public class HerbCollectorManager : MonoBehaviour
         GameObject newCardObject = Instantiate(herbCollectorCardPrefab, collectorCardContainer);
         HerbCollectorCard newCard = newCardObject.GetComponent<HerbCollectorCard>();
         
-        // Set random herbs for spots 0 and 1
-        int herb1 = Random.Range(0, 5); // Herb 0 to 4
-        int herb2 = Random.Range(0, 5); // Herb 0 to 4
-        newCard.SetHerbGraphics(herb1, herb2); // Set graphics for spots 0 and 1
+        // Set initial values for spots 0 and 1
+        newCard.SetStartValues(); // Set random herbs for spots 0 and 1
 
         // Add card to list of collector cards
         collectorCards.Add(newCard);
