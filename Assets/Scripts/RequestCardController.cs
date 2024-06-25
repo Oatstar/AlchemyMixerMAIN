@@ -58,13 +58,18 @@ public class RequestCardController : MonoBehaviour
         RequestedPotion newPot = returnedPotion.GetComponent<BottledPotionController>().GetRequestedPotionData();
         bool correctPotion = true;
 
-        for (int i = 0; i < newPot.herbs.Count; i++)
-        {
-            if (newPot.herbs[i].herbId != reqPot.herbs[i].herbId || newPot.herbs[i].herbState != reqPot.herbs[i].herbState)
-            {
-                correctPotion = false;
-            }
-        }
+        //for (int i = 0; i < newPot.herbs.Count; i++)
+        //{
+        //   if (newPot.herbs[i].herbId != reqPot.herbs[i].herbId || newPot.herbs[i].herbState != reqPot.herbs[i].herbState)
+        //    {
+        //        correctPotion = false;
+        //    }
+        //}
+
+        if(newPot.potionName = reqPot.potionName)
+            correctPotion = true;
+        else
+            correctPotion = false;
 
         if (newPot.boilLevel != reqPot.boilLevel)
         {
