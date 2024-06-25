@@ -96,9 +96,34 @@ public class PotionManager : MonoBehaviour
 
     public string CompareIngredientsAndGetPotionName(RequestedPotion newPotion)
     {
-        string newPotionName = "";
-
-        return newPotionName;
+        foreach (RequestedPotion potion in allRequestablePotions)
+        {
+            if (potion.herbs.Count == newPotion.herbs.Count)
+            {
+                bool match = true;
+                List<Herb> tempHerbs = new List<Herb>(potion.herbs);
+    
+                foreach (Herb herb in newPotion.herbs)
+                {
+                    Herb matchHerb = tempHerbs.Find(h => h.herbId == herb.herbId && h.workState == herb.workState);
+                    if (matchHerb != null)
+                    {
+                        tempHerbs.Remove(matchHerb);
+                    }
+                    else
+                    {
+                        match = false;
+                        break;
+                    }
+                }
+    
+                if (match && tempHerbs.Count == 0)
+                {
+                    return potion.potionName;
+                }
+            }
+        }
+    return "Unknown Potion";
     }
 
 }
