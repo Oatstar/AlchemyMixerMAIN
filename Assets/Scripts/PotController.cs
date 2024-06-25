@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PotController : MonoBehaviour
 {
+    PotionManager potionMan;
+
     [SerializeField] List<GameObject> potIngredients = new List<GameObject> { };
     [SerializeField] GameObject boilingIcon;
 
@@ -102,7 +104,7 @@ public class PotController : MonoBehaviour
 
         RequestedPotion newPotion = new RequestedPotion();
 
-        newPotion.potionName = "New Potion";
+        //newPotion.potionName = "New Potion";
         foreach (GameObject usedIngredient in potIngredients)
         {
             IngredientController ingredientContr = usedIngredient.GetComponent<IngredientController>();
@@ -111,6 +113,9 @@ public class PotController : MonoBehaviour
             //newPotion.herbs.Add(ingredientContr.GetHerbId());
             //newPotion.herbState.Add(ingredientContr.GetWorkState());
         }
+
+        potionMan.CompareIngredientsAndGetPotionName(newPotion);
+        
 
         bottledPotionContr.CacheReadyPotionData(newPotion);
 

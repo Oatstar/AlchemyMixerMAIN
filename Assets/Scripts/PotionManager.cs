@@ -94,6 +94,13 @@ public class PotionManager : MonoBehaviour
         return tempPotion;
     }
 
+    public string CompareIngredientsAndGetPotionName(RequestedPotion newPotion)
+    {
+        string newPotionName = "";
+
+        return newPotionName;
+    }
+
 }
 
 
