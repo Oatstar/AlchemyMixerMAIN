@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class RequestCardController : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class RequestCardController : MonoBehaviour
 
     [SerializeField] List<int> neededHerbs = new List<int> { };
     [SerializeField] List<int> neededHerbStates = new List<int> { };
+
+    [SerializeField] GameObject[] herbContainers= new GameObject[5];
+    [SerializeField] TMP_Text[] herbTextObjects = new TMP_Text[5];
+    [SerializeField] Image[] herbImageObjects = new Image[5];
+
+    [SerializeField] GameObject[] boilIcons = new GameObject[3];
 
     public void SetRequestValues(RequestedPotion requestedPotion)
     {
@@ -35,14 +42,38 @@ public class RequestCardController : MonoBehaviour
             string herbNameText = HerbManager.instance.GetHerbNames(reqPot.herbs[i].herbId);
 
             string tempString = herbStateText + " " + herbNameText;
-            if (i != 0)
-                recipeTextString += "\n";
 
-            recipeTextString += tempString;
+            herbTextObjects[i].text = tempString;
+            herbImageObjects[i].sprite = HerbManager.instance.GetHerbImage(reqPot.herbs[i].herbId, reqPot.herbs[i].herbState);
+            //if (i != 0)
+            //recipeTextString += "\n";
+
+            //recipeTextString += tempString;
+        }
+
+        for (int i = numberOfHerbs; i < herbContainers.Length; i++)
+        {
+            herbContainers[i].SetActive(false);
         }
 
         recipeTextHeader.text = reqPot.potionName;
-        recipeTextRecipe.text = recipeTextString;
+        //recipeTextRecipe.text = recipeTextString;
+
+        SetBoilIcons(reqPot);
+    }
+
+    void SetBoilIcons(RequestedPotion reqPot)
+    {
+        boilIcons[0].SetActive(false);
+        boilIcons[1].SetActive(false);
+        boilIcons[2].SetActive(false);
+
+        for (int i = 0; i < reqPot.boilLevel; i++)
+        {
+            boilIcons[i].SetActive(true);
+        }
+
+        
     }
 
     public void ReturnOrder(GameObject item)

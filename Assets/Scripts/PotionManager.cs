@@ -10,10 +10,10 @@ public class PotionManager : MonoBehaviour
     #region
     [SerializeField] List<string> potionNameList = new List<string>()
     {
-        "Healing", "Strength", "Agility", "Wisdom", "Invisibility", "Fire Resistance", "Water Breathing", "Speed", "Night Vision", "Fortitude", "Mana",
+        "Healing", "Strength", "Agility", "Wisdom", "Invisibility", "Fire Resistance", "Breathing", "Speed", "Night Vision", "Fortitude", "Mana",
         "Luck", "Regeneration", "Poison", "Courage","Clarity","Silence","Stone Skin","Stamina","Transformation","Teleportation","Energy",
         "Antidote","Reflection","Charm","Intellect","Vitality","Protection","Berserk","Shielding","Focus","Awakening","Calmness","Featherfall",
-        "Illusion","Stealth","Fortification","Growth","Shrinking","Restoration","Invulnerability","Purity","Detect Magic","Elemental Resistance","Magic Absorption",
+        "Illusion","Stealth","Fortification","Growth","Shrinking","Restoration","Invulnerability","Purity","Detect Magic","Magic Absorption",
         "Swiftfoot","Etherealness","Amplification","Rejuvenation","Phantom","Quickness","Insight","Harmony","Rebirth","Celerity","Alacrity","Tenacity","Focus",
         "Magnetism","Evasion","Transformation","Vision","Climbing","Courage","Mimicry","Sanctuary","Endurance","Foresight","Luminescence","Mending","Shield",
         "Steadfastness","Haste","Resistance","Escape","Empathy","Balance","Clarity","Precision","Serenity","Fortification","Transmutation","Adaptation",
@@ -38,11 +38,11 @@ public class PotionManager : MonoBehaviour
 
     void CreateAllPotions()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
             CreatePotion(2);
-        for (int i = 0; i < 25; i++)
+        for (int i = 0; i < 5; i++)
             CreatePotion(3);
-        for (int i = 0; i < 35; i++)
+        for (int i = 0; i < 5; i++)
             CreatePotion(4);
 
         //Only 1 level 5 potion

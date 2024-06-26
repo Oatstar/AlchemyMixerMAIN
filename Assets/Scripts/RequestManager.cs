@@ -40,4 +40,10 @@ public class RequestManager : MonoBehaviour
         InfoTextPopupManager.instance.SpawnInfoTextPopup("Incorrect potion! Lost the deal");
 
     }
+
+    public int FreeCardSlotsLeft()
+    {
+        int childs = requestCardContainer.transform.childCount;
+        return (3 - childs);
+    }
 }

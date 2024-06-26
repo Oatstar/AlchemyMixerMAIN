@@ -37,7 +37,7 @@ public class Tooltip : MonoBehaviour
 
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, mousePosition, canvas.worldCamera, out localPoint);
-        Vector2 offset = new Vector2(-15, 25);
+        Vector2 offset = new Vector2(-15, 35);
         thisRectTransform.anchoredPosition = localPoint + offset;
     }
 

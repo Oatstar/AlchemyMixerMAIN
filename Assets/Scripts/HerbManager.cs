@@ -45,7 +45,7 @@ public class HerbManager : MonoBehaviour
     }
     private void LateStart()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 10; i++)
         {
             SpawnHerb();
         }
