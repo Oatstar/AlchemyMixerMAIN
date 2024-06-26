@@ -46,8 +46,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             if(slotFull)
             {
                 eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
+                Debug.Log("Slot is full. Returning to original slot.");
             }
             else if (this.tag == "ReturnBox" && eventData.pointerDrag.tag != "Potion")
+            {
+                eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
+            }
+            else if (this.tag == "FlightReturnBox" && eventData.pointerDrag.tag != "Potion")
             {
                 eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
             }
@@ -74,15 +79,22 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
 
         if(this.tag == "Workstation")
         {
+            item.transform.SetSiblingIndex(2);
             GetComponent<WorkstationController>().ItemDroppedToWorkstation(item);
         }
-        if (this.tag == "Pot")
+        else if (this.tag == "Pot")
         {
+            slotFull = false;
             GetComponent<PotController>().AddIngredient(item);
         }
-        if (this.tag == "ReturnBox")
+        else if (this.tag == "ReturnBox")
         {
             GetComponentInParent<RequestCardController>().ReturnOrder(item);
+        }
+        else if (this.tag == "FlightReturnBox")
+        {
+            GameMasterManager.instance.PotionOfFlightReady(item);
+            slotFull = false;
         }
     }
 

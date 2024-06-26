@@ -81,5 +81,8 @@ public class WorkstationController : MonoBehaviour
         }
     }
 
-   
+   public GameObject GetCurrentItem()
+    {
+        return currentIngredient;
+    }
 }

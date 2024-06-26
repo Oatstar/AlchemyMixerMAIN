@@ -12,6 +12,8 @@ TagManager:
   - PotionHolder
   - ReturnBox
   - HerbCard
+  - TrashCan
+  - FlightReturnBox
   layers:
   - Default
   - TransparentFX

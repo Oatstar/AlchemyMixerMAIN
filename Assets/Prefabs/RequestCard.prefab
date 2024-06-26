@@ -411,8 +411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 313.65, y: 401.9861}
+  m_AnchoredPosition: {x: 0, y: 1.6694}
+  m_SizeDelta: {x: 313.65, y: 405.3249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8195184474728705011
 CanvasRenderer:
@@ -575,8 +575,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -64.5, y: -148.72}
-  m_SizeDelta: {x: 161, y: 80.559}
+  m_AnchoredPosition: {x: -64.5, y: -138.63}
+  m_SizeDelta: {x: 161, y: 100.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4707004668674011303
 GameObject:
@@ -645,8 +645,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chopped Thym
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
-  m_sharedMaterial: {fileID: -4741837632071999096, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
+  m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -670,8 +670,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -972,8 +972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.5, y: 168.6}
-  m_SizeDelta: {x: 291, y: 39.748}
+  m_AnchoredPosition: {x: 0.5, y: 174.86}
+  m_SizeDelta: {x: 291, y: 52.267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &698725875705126813
 CanvasRenderer:
@@ -1005,8 +1005,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Potion of Transformation
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
-  m_sharedMaterial: {fileID: -4741837632071999096, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
+  m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1030,8 +1030,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1110,8 +1110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -16.660507}
-  m_SizeDelta: {x: -44.428, y: -50.4086}
+  m_AnchoredPosition: {x: 0, y: -26.1263}
+  m_SizeDelta: {x: -44.428, y: -69.3402}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850259872850831731
 MonoBehaviour:
@@ -1246,8 +1246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 161, y: 80.559}
+  m_AnchoredPosition: {x: 0.000017166, y: 5.0453}
+  m_SizeDelta: {x: 161, y: 90.649}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5642394788101369564
 CanvasRenderer:
@@ -1277,10 +1277,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Boiled three rounds
+  m_text: Boiled 3 rounds
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
-  m_sharedMaterial: {fileID: -4741837632071999096, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
+  m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1304,8 +1304,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1415,8 +1415,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chopped Thym
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
-  m_sharedMaterial: {fileID: -4741837632071999096, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
+  m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1440,8 +1440,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1713,6 +1713,7 @@ MonoBehaviour:
   - {fileID: 1940033293961189632}
   - {fileID: 1618238949611743712}
   - {fileID: 6238818219218529614}
+  boilingLevelTextObject: {fileID: 8425275750750750764}
   boilIcons:
   - {fileID: 6503021141931724309}
   - {fileID: 3485628410241608489}
@@ -1859,8 +1860,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chopped Thym
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
-  m_sharedMaterial: {fileID: -4741837632071999096, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
+  m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1884,8 +1885,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1995,8 +1996,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chopped Thym
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
-  m_sharedMaterial: {fileID: -4741837632071999096, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
+  m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2020,8 +2021,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2131,8 +2132,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chopped Thym
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
-  m_sharedMaterial: {fileID: -4741837632071999096, guid: 7a9ed3bf70b3deb439b846096ab6e8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
+  m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2156,8 +2157,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

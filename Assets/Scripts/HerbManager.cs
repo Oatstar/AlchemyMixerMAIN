@@ -15,9 +15,12 @@ public class HerbManager : MonoBehaviour
     [SerializeField] Sprite[] Herb2_Images = new Sprite[] { };
     [SerializeField] Sprite[] Herb3_Images = new Sprite[] { };
     [SerializeField] Sprite[] Herb4_Images = new Sprite[] { };
+    [SerializeField] Sprite[] Herb5_Images = new Sprite[] { };
 
-    string[] herbNames = new string[5] { "Mynt", "Saph", "Thym", "Blis", "Neth" };
+    string[] herbNames = new string[6] { "Mynt", "Saph", "Thym", "Blis", "Neth", "Feather" };
     string[] herbStates = new string[4] { "Raw", "Crushed", "Chopped", "Dried" };
+
+    int featherPrice = 50;
 
     public static HerbManager instance;
 
@@ -78,7 +81,7 @@ public class HerbManager : MonoBehaviour
 
     public int CountFreeInventorySlots()
     {
-        int freeSlotCount = 20;
+        int freeSlotCount = 15;
         foreach (Transform inventorySlot in inventoryContainer.transform)
         {
             chosenInventorySlotScript = inventorySlot.transform.GetComponent<ItemSlot>();
@@ -111,6 +114,9 @@ public class HerbManager : MonoBehaviour
             case 4:
                 //Debug.Log("returning herb " + herbId + " images at herbstate "+herbState);
                 return Herb4_Images[herbState];
+            case 5:
+                //Debug.Log("returning herb " + herbId + " images at herbstate "+herbState);
+                return Herb5_Images[herbState];
             default:
                 //Debug.Log("returning herb " + herbId + " images at herbstate " + herbState);
                 return Herb0_Images[0];
@@ -120,5 +126,24 @@ public class HerbManager : MonoBehaviour
     public string GetHerbName(int herbId, int herbState)
     {
         return herbStates[herbState] + " " + herbNames[herbId];
+    }
+
+    public void BuyFeather()
+    {
+        if(GameMasterManager.instance.GetPlayerMoney() < featherPrice)
+        {
+            Debug.Log("Not enough money");
+            InfoTextPopupManager.instance.SpawnInfoTextPopup("Not enough money");
+        }
+        else if(CountFreeInventorySlots() < 1)
+        {
+            Debug.Log("Not enough free inventory");
+            InfoTextPopupManager.instance.SpawnInfoTextPopup("Inventory full");
+        }
+            else
+        {
+            InfoTextPopupManager.instance.SpawnInfoTextPopup("Bought a magic feather");
+            SpawnHerb(5);
+        }
     }
 }

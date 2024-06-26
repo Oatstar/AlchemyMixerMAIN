@@ -28,7 +28,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }   
 
     public void OnBeginDrag(PointerEventData eventData) {
-        Debug.Log("OnBeginDrag");
+        //Debug.Log("OnBeginDrag");
         originalParent = this.transform.parent.gameObject;
 
         CheckWorkStation();
@@ -60,12 +60,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        Debug.Log("OnEndDrag");
+        //Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
         if(!inSlot)
         {
+            Debug.Log("Item not in slot. Returning to original slot.");
             ReturnToOriginalSlot();
         }
         else
@@ -80,7 +81,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
 
     public void OnPointerDown(PointerEventData eventData) {
-        Debug.Log("OnPointerDown");
+        //Debug.Log("OnPointerDown");
     }
 
 

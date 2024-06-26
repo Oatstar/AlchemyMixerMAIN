@@ -20,13 +20,14 @@ public class RequestCardController : MonoBehaviour
     [SerializeField] TMP_Text[] herbTextObjects = new TMP_Text[5];
     [SerializeField] Image[] herbImageObjects = new Image[5];
 
+    [SerializeField] TMP_Text boilingLevelTextObject;
     [SerializeField] GameObject[] boilIcons = new GameObject[3];
 
     public void SetRequestValues(RequestedPotion requestedPotion)
     {
         reqPot = requestedPotion;
 
-        string recipeTextString = "";
+        //string recipeTextString = "";
 
         int numberOfHerbs = requestedPotion.herbs.Count;
 
@@ -73,7 +74,7 @@ public class RequestCardController : MonoBehaviour
             boilIcons[i].SetActive(true);
         }
 
-        
+        boilingLevelTextObject.text = "Boil " + reqPot.boilLevel + " rounds";
     }
 
     public void ReturnOrder(GameObject item)

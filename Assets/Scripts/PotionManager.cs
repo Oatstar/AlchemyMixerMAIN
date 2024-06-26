@@ -24,10 +24,17 @@ public class PotionManager : MonoBehaviour
     [SerializeField] List<string> tempNameList = new List<string>();
     HashSet<string> usedCombinations = new HashSet<string>(); // Track used combinations
 
-
+    public RequestedPotion potionOfFlight;
     [SerializeField] List<RequestedPotion> allRequestablePotions = new List<RequestedPotion>() { };
     [SerializeField] List<RequestedPotion> staticPotionList = new List<RequestedPotion>() { };
     [SerializeField] List<RequestedPotion> requestedPotions = new List<RequestedPotion>() { };
+
+    public static PotionManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -40,19 +47,21 @@ public class PotionManager : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
             CreatePotion(2);
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 15; i++)
             CreatePotion(3);
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 35; i++)
             CreatePotion(4);
 
         //Only 1 level 5 potion
-        CreatePotion(5);
+        CreatePotionOfFlight();
 
         staticPotionList.AddRange(allRequestablePotions);
     }
 
     void CreatePotion(int potionLevel)
     {
+ 
+
         RequestedPotion newPotion = new RequestedPotion();
         newPotion.potionName = "Potion of " +tempNameList[UnityEngine.Random.Range(0, tempNameList.Count-1)];
         tempNameList.Remove(newPotion.potionName); //Remove the used potion name
@@ -86,12 +95,63 @@ public class PotionManager : MonoBehaviour
             newPotion.herbs.Add(newHerb);
         }
 
-        if(potionLevel == 5)
-        {
-            newPotion.potionName = "Potion of Flight";
-        }
+        newPotion.boilLevel = SetBoilLevel(newPotion.potionLevel);
 
         allRequestablePotions.Add(newPotion);
+    }
+
+    int SetBoilLevel(int potLevel)
+    {
+        if(potLevel == 2)
+        {
+            return UnityEngine.Random.Range(0, 2); //0,1
+        }
+        if (potLevel == 3)
+        {
+            return UnityEngine.Random.Range(0, 3); //0,1,2
+        }
+        if (potLevel == 4)
+        {
+            return UnityEngine.Random.Range(1, 4); //0,1,2,3
+        }
+        return 0;   
+    }
+
+    void CreatePotionOfFlight()
+    {
+        RequestedPotion newPotion = new RequestedPotion();
+        newPotion.potionName = "Potion of Flight";
+        tempNameList.Remove(newPotion.potionName); //Remove the used potion name
+
+        Herb newHerb1 = new Herb();
+        newHerb1.herbId = 5;
+        newHerb1.herbState = 0;
+        newPotion.herbs.Add(newHerb1);
+
+        Herb newHerb2 = new Herb();
+        newHerb2.herbId = 5;
+        newHerb2.herbState = 1;
+        newPotion.herbs.Add(newHerb2);
+
+        Herb newHerb3 = new Herb();
+        newHerb3.herbId = 5;
+        newHerb3.herbState = 2;
+        newPotion.herbs.Add(newHerb3);
+
+        Herb newHerb4 = new Herb();
+        newHerb4.herbId = 5;
+        newHerb4.herbState = 3;
+        newPotion.herbs.Add(newHerb4);
+
+        Herb newHerb5 = new Herb();
+        newHerb5.herbId = 1;
+        newHerb5.herbState = 3;
+        newPotion.herbs.Add(newHerb5);
+
+        newPotion.boilLevel = 3;
+
+        potionOfFlight = newPotion;
+        staticPotionList.Add(potionOfFlight);
     }
 
     public RequestedPotion GetNewRecipeRequest()

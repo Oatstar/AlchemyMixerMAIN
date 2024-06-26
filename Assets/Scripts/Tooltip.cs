@@ -29,6 +29,7 @@ public class Tooltip : MonoBehaviour
     private void Start()
     {
         ShowToolTip("");
+        HideToolTip();
     }
 
     private void Update()
@@ -54,6 +55,10 @@ public class Tooltip : MonoBehaviour
     private void HideToolTip()
     {
         gameObject.SetActive(false);
+        tooltipText.text = "  ";
+        float padding = 4f;
+        Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + padding * 2f, tooltipText.preferredHeight + padding * 2f);
+        thisRectTransform.sizeDelta = backgroundSize;
     }
 
 
