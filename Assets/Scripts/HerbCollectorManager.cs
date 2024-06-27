@@ -16,7 +16,7 @@ public class HerbCollectorManager : MonoBehaviour
     [SerializeField] Slider slider;
 
     [SerializeField] float cardTimer = 0f;
-    float cardSpawnInterval = 20f;
+    float cardSpawnInterval = 10f;
     int cardPrice = 4;
 
     private void Awake()

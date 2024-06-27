@@ -12,7 +12,7 @@ public class FireController : MonoBehaviour
     bool flaming = false;
     [SerializeField] float fireAmount = 0;
     float maxFire = 20;
-    float firePerClick = 2.00f;
+    float firePerClick = 3.00f;
     float flamingDecreaseModifier = 2.5f;
     float nonFlamingDecreaseModifier = 4.5f;
 
@@ -71,17 +71,19 @@ public class FireController : MonoBehaviour
             fireImage.gameObject.SetActive(true);
             colorBlock.normalColor = new Color(1f,0.06f, 0f); //Flaming and over 0 heat
             fireImage.sprite = fireFlaming;
+            SoundManager.instance.PlayFlameOn();
         }
         else if(fireAmount > 0)
         {
             fireImage.gameObject.SetActive(true);
             colorBlock.normalColor = new Color(1f, 0.65f, 0.21f); //Over 0 heat but not flaming
             fireImage.sprite = fireStarting;
+            SoundManager.instance.PlayFireplace();
         }
         else
         {
             fireImage.gameObject.SetActive(false);
-            
+            SoundManager.instance.StopFireplace();
             colorBlock.normalColor = new Color(0.59f, 0.53f, 0.37f); //Not flaming, cooled down and at 0 heat
         }
         slider.colors = colorBlock;

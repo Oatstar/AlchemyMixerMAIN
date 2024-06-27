@@ -16,7 +16,7 @@ public class PotController : MonoBehaviour
 
     bool boiling;
     //Slider timerSlider;
-    float boilTimePerInterval = 5f;
+    float boilTimePerInterval = 3.0f;
     [SerializeField] float currentBoilAmount = 0f;
     [SerializeField] int boilIntervalCount = 0;
 
@@ -41,6 +41,11 @@ public class PotController : MonoBehaviour
         {
             item.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
             InfoTextPopupManager.instance.SpawnInfoTextPopup("Cauldron full");
+        }
+        else if (boiling)
+        {
+            item.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
+            InfoTextPopupManager.instance.SpawnInfoTextPopup("Already boiling. Can't add more herbs.");
         }
         else
         {
@@ -103,7 +108,7 @@ public class PotController : MonoBehaviour
     void AddBoilTick()
     {
         boilIntervalCount++;
-
+        SoundManager.instance.PlayBoilUp();
 
         //Add 1 flame symbol per each full boilTimePerInterval
     }

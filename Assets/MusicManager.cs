@@ -6,14 +6,16 @@ public class MusicManager : MonoBehaviour
 {
 
     [SerializeField] AudioSource mainMusic;
+
+    [SerializeField] bool muted;
     void Start()
     {
         mainMusic.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MuteMusic()
     {
-        
+        muted = !muted;
+        mainMusic.mute = muted;
     }
 }

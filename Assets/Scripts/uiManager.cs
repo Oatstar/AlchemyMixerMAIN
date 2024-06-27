@@ -14,6 +14,9 @@ public class uiManager : MonoBehaviour
     [SerializeField] GameObject continueButton;
     [SerializeField] GameObject startButton;
 
+    [SerializeField] GameObject gameVictoryScreen;
+
+    [SerializeField] TMP_Text endTimerText;
     private void Awake()
     {
         pausePanel.SetActive(true);
@@ -57,9 +60,17 @@ public class uiManager : MonoBehaviour
         pausePanel.SetActive(true);
     }
 
-    public void StartGameWonSequence()
-    {
 
+    public void StartGameWonSequence(float endTimer)
+    {
+        gameVictoryScreen.SetActive(true);
+        int timer = Mathf.RoundToInt(endTimer);
+        endTimerText.text = "You finished the game in " + timer.ToString() + " seconds";
+    }
+
+    public void CloseGameVictoryScreen()
+    {
+        gameVictoryScreen.SetActive(false);
     }
 
 

@@ -45,10 +45,21 @@ public class PotionManager : MonoBehaviour
 
     void CreateAllPotions()
     {
+        CreatePotion(2);
+        CreatePotion(3);
+        CreatePotion(4);
+        CreatePotion(3);
         for (int i = 0; i < 5; i++)
             CreatePotion(2);
         for (int i = 0; i < 15; i++)
-            CreatePotion(3);
+        {
+            int randomChance = UnityEngine.Random.Range(0, 2);
+            if(randomChance == 1)
+                CreatePotion(3);
+            else
+                CreatePotion(4);
+
+        }
         for (int i = 0; i < 35; i++)
             CreatePotion(4);
 
@@ -60,9 +71,7 @@ public class PotionManager : MonoBehaviour
 
     void CreatePotion(int potionLevel)
     {
- 
-
-        RequestedPotion newPotion = new RequestedPotion();
+         RequestedPotion newPotion = new RequestedPotion();
         newPotion.potionName = "Potion of " +tempNameList[UnityEngine.Random.Range(0, tempNameList.Count-1)];
         tempNameList.Remove(newPotion.potionName); //Remove the used potion name
 
@@ -94,7 +103,7 @@ public class PotionManager : MonoBehaviour
 
             newPotion.herbs.Add(newHerb);
         }
-
+        newPotion.potionLevel = potionLevel;
         newPotion.boilLevel = SetBoilLevel(newPotion.potionLevel);
 
         allRequestablePotions.Add(newPotion);
@@ -106,15 +115,18 @@ public class PotionManager : MonoBehaviour
         {
             return UnityEngine.Random.Range(0, 2); //0,1
         }
-        if (potLevel == 3)
+        else if (potLevel == 3)
         {
             return UnityEngine.Random.Range(0, 3); //0,1,2
         }
-        if (potLevel == 4)
+        else if (potLevel == 4)
         {
             return UnityEngine.Random.Range(1, 4); //0,1,2,3
         }
-        return 0;   
+        else
+        {
+            return 0;   
+        }
     }
 
     void CreatePotionOfFlight()
@@ -163,6 +175,9 @@ public class PotionManager : MonoBehaviour
 
     public string CompareIngredientsAndGetPotionName(RequestedPotion newPotion)
     {
+        bool herbsMatch = false;
+        RequestedPotion currentMatchPotion = new RequestedPotion();
+
         foreach (RequestedPotion potion in staticPotionList)
         {
             if (potion.herbs.Count == newPotion.herbs.Count)
@@ -202,15 +217,26 @@ public class PotionManager : MonoBehaviour
                     }
                 }
 
-                // If all herbs matched, return the potion name
+                // If all herbs matched
                 if (match)
                 {
-                    return potion.potionName;
+                    currentMatchPotion = potion;
+                    herbsMatch = match;
+                    break;
                 }
-
             }
         }
-    return "Unknown Potion";
+
+        if(currentMatchPotion != null)
+        {
+            if (herbsMatch && newPotion.boilLevel == currentMatchPotion.boilLevel)
+            {
+                return currentMatchPotion.potionName;
+            }
+        }
+        
+        
+        return "Unknown Potion";
     }
 
 }

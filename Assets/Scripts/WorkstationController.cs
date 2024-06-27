@@ -42,6 +42,7 @@ public class WorkstationController : MonoBehaviour
 
     void StartWorking()
     {
+        SoundManager.instance.PlayTickTock();
         working = true;
         currentTimer = maxTimer;
     }

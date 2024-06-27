@@ -31,11 +31,11 @@ public class StarsMover : MonoBehaviour
         while (true)
         {
             rectTrans.anchoredPosition = targetPos;
-            yield return new WaitForSeconds(interval);
+            yield return new WaitForSecondsRealtime(interval);
 
             // Move back to starting position
             rectTrans.anchoredPosition = startingPos;
-            yield return new WaitForSeconds(interval);
+            yield return new WaitForSecondsRealtime(interval);
         }
     }
 }

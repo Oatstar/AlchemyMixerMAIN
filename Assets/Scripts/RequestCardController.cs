@@ -93,6 +93,8 @@ public class RequestCardController : MonoBehaviour
             RequestManager.instance.IncorrectPotionReturned();
             Destroy(this.gameObject);
         }
+
+        RequestManager.instance.PotionReturnedFinished();
     }
 
     bool CheckIfCorrectPotion(GameObject returnedPotion)

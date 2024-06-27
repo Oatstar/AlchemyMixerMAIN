@@ -146,6 +146,7 @@ public class HerbManager : MonoBehaviour
         {
             InfoTextPopupManager.instance.SpawnInfoTextPopup("Bought a magic feather");
             SpawnHerb(5);
+            GameMasterManager.instance.AddMoney(-featherPrice);
         }
     }
 

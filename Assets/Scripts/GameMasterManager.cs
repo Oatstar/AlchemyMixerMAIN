@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameMasterManager : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class GameMasterManager : MonoBehaviour
 
     float gameTime = 0f;
     float potionOrderTimer = 0f;
-    float potionOrderInterval = 25f;
+    float potionOrderInterval = 20f;
+    [SerializeField] TMP_Text timerText;
 
     public static GameMasterManager instance;
     [SerializeField] Slider slider;
@@ -21,9 +23,12 @@ public class GameMasterManager : MonoBehaviour
     [SerializeField] int failedToComply = 0;
     public bool gameStarted = false;
 
+    [SerializeField] GameObject splashScreen;
+
     private void Awake()
     {
         instance = this;
+        splashScreen.SetActive(true);
     }
 
     private void Start()
@@ -68,10 +73,11 @@ public class GameMasterManager : MonoBehaviour
     {
 
         //if (Input.GetKeyDown(KeyCode.A))
-        //    requestMan.RequestPotion();
+        //    uiMan.StartGameWonSequence(gameTime);
 
 
         gameTime += Time.deltaTime;
+        timerText.text = "Timer: " + Mathf.RoundToInt(gameTime).ToString();
         potionOrderTimer += Time.deltaTime;
         slider.value = Tools.instance.NormalizeToSlider(potionOrderTimer, potionOrderInterval);
 
@@ -138,8 +144,10 @@ public class GameMasterManager : MonoBehaviour
         {
             Debug.Log("Potion of Flight returned!");
             InfoTextPopupManager.instance.SpawnInfoTextPopup("You created a Potion of Flight!");
+            //gameStarted = true;
+
             uiMan.OpenPausePanel();
-            uiMan.StartGameWonSequence();
+            uiMan.StartGameWonSequence(gameTime);
         }
         else
         {

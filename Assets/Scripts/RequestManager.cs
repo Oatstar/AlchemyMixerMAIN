@@ -11,7 +11,7 @@ public class RequestManager : MonoBehaviour
     public static RequestManager instance;
 
     int requestBaseReward = 4;
-    int requestLevelMultiplier = 3;
+    int requestLevelMultiplier = 4;
 
     private void Awake()
     {
@@ -36,6 +36,7 @@ public class RequestManager : MonoBehaviour
         GameMasterManager.instance.ReceiveMoney(moneyGained);
 
         InfoTextPopupManager.instance.SpawnInfoTextPopup("Correct potion! Gained " + moneyGained + "g");
+
     }
 
     public void IncorrectPotionReturned()
@@ -46,9 +47,18 @@ public class RequestManager : MonoBehaviour
 
     }
 
+    public void PotionReturnedFinished()
+    {
+        if(FreeCardSlotsLeft() == 1)
+        {
+            RequestPotion();
+        }
+    }
+
     public int FreeCardSlotsLeft()
     {
         int childs = requestCardContainer.transform.childCount;
+        Debug.Log("childs: "+childs);
         return (3 - childs);
     }
 }
