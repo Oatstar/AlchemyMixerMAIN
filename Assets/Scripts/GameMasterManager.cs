@@ -15,6 +15,8 @@ public class GameMasterManager : MonoBehaviour
     float potionOrderTimer = 0f;
     float potionOrderInterval = 20f;
     [SerializeField] TMP_Text timerText;
+    [SerializeField] TMP_Text potionReturnedText;
+    public int potionsReturned = 0;
 
     public static GameMasterManager instance;
     [SerializeField] Slider slider;
@@ -24,6 +26,12 @@ public class GameMasterManager : MonoBehaviour
     public bool gameStarted = false;
 
     [SerializeField] GameObject splashScreen;
+
+    public void PotionReturned()
+    {
+        potionsReturned++;
+        potionReturnedText.text = "Potions returned: " + potionsReturned;
+    }
 
     private void Awake()
     {

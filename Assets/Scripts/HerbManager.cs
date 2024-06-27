@@ -22,7 +22,7 @@ public class HerbManager : MonoBehaviour
     string[] herbNames = new string[6] { "Mynt", "Saph", "Thym", "Blis", "Neth", "Feather" };
     string[] herbStates = new string[4] { "Raw", "Crushed", "Chopped", "Dried" };
 
-    int featherPrice = 40;
+    int featherPrice = 50;
 
     public static HerbManager instance;
 

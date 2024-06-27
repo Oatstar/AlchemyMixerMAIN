@@ -13857,6 +13857,8 @@ MonoBehaviour:
   potionMan: {fileID: 1278626154}
   requestMan: {fileID: 1278626152}
   timerText: {fileID: 1769343720}
+  potionReturnedText: {fileID: 474258250}
+  potionsReturned: 0
   slider: {fileID: 1131516411}
   playerMoney: 14
   failedToComply: 0
@@ -20691,7 +20693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy magic feather for 40g
+  m_text: Buy magic feather for 50g
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2996df834f68c2c4da4955810857e403, type: 2}
   m_sharedMaterial: {fileID: -6532258367426270132, guid: 2996df834f68c2c4da4955810857e403, type: 2}

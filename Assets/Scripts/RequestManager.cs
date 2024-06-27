@@ -10,7 +10,7 @@ public class RequestManager : MonoBehaviour
     [SerializeField] GameObject requestCardPrefab;
     public static RequestManager instance;
 
-    int requestBaseReward = 4;
+    int requestBaseReward = 3;
     int requestLevelMultiplier = 4;
 
     private void Awake()
@@ -37,6 +37,7 @@ public class RequestManager : MonoBehaviour
 
         InfoTextPopupManager.instance.SpawnInfoTextPopup("Correct potion! Gained " + moneyGained + "g");
 
+        GameMasterManager.instance.PotionReturned();
     }
 
     public void IncorrectPotionReturned()
