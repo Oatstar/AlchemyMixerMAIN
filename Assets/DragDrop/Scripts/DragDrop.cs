@@ -39,7 +39,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
-
+        SoundManager.instance.PlayBasicClick();
     }
 
     void CheckWorkStation()
@@ -73,6 +73,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         {
             transform.parent.GetComponent<ItemSlot>().CheckSlotState();
         }
+        SoundManager.instance.PlayBasicClick();
     }
 
     public void ReturnToOriginalSlot()

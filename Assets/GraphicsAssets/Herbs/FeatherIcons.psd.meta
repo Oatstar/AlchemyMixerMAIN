@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FeatherIcons_0: 8983911264067589857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

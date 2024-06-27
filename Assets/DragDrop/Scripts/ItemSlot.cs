@@ -96,6 +96,11 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             GameMasterManager.instance.PotionOfFlightReady(item);
             slotFull = false;
         }
+        else if (this.tag == "TrashCan")
+        {
+            TrashcanScript.instance.TrashItem(item);
+            slotFull = false;
+        }
     }
 
 

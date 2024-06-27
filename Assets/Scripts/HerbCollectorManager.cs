@@ -8,6 +8,8 @@ public class HerbCollectorManager : MonoBehaviour
     public Transform collectorCardContainer; // Parent container for instantiated cards
     public int numberOfCards = 3; // Number of cards to instantiate initially
 
+    
+
     private List<HerbCollectorCard> collectorCards = new List<HerbCollectorCard>();
 
     public static HerbCollectorManager instance;

@@ -128,6 +128,7 @@ public class PotController : MonoBehaviour
         if (potionHolder.transform.childCount > 0) //If potionholder already has a potion, lever doesn't do anything
         {
             Debug.Log("Potionholder already has a potion!");
+            InfoTextPopupManager.instance.SpawnInfoTextPopup("Potionholder already full");
             return;
         }
 
@@ -168,7 +169,9 @@ public class PotController : MonoBehaviour
 
         bottledPotionContr.CacheReadyPotionData(newPotion);
 
+        InfoTextPopupManager.instance.SpawnInfoTextPopup("New potion created");
         boilIntervalCount = 0;
         RefreshBoilIcons();
+        SoundManager.instance.PlayPotionReady();
     }
 }

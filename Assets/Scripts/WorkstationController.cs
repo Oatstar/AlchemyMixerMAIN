@@ -70,14 +70,17 @@ public class WorkstationController : MonoBehaviour
         if (this.name == "MortarPestle")
         {
             currentIngredient.GetComponent<IngredientController>().SetWorkState(1);
+            SoundManager.instance.PlayMortar();
         }
         else if (this.name == "CuttingStation")
         {
             currentIngredient.GetComponent<IngredientController>().SetWorkState(2);
+            SoundManager.instance.PlayChopping();
         }
         else if (this.name == "Dryer")
         {
             currentIngredient.GetComponent<IngredientController>().SetWorkState(3);
+            SoundManager.instance.PlayDryer();
         }
     }
 

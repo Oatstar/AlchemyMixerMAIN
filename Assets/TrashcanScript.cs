@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class TrashcanScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static TrashcanScript instance;
+
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TrashItem(GameObject item)
     {
-        
+        Destroy(item);
+        InfoTextPopupManager.instance.SpawnInfoTextPopup("Trashed item");
     }
 }

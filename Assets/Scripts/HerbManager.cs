@@ -10,6 +10,8 @@ public class HerbManager : MonoBehaviour
     [SerializeField] Transform chosenInventorySlot;
     [SerializeField] ItemSlot chosenInventorySlotScript;
 
+    [SerializeField] Sprite questionMarkSprite;
+
     [SerializeField] Sprite[] Herb0_Images = new Sprite[] { };
     [SerializeField] Sprite[] Herb1_Images = new Sprite[] { };
     [SerializeField] Sprite[] Herb2_Images = new Sprite[] { };
@@ -20,7 +22,7 @@ public class HerbManager : MonoBehaviour
     string[] herbNames = new string[6] { "Mynt", "Saph", "Thym", "Blis", "Neth", "Feather" };
     string[] herbStates = new string[4] { "Raw", "Crushed", "Chopped", "Dried" };
 
-    int featherPrice = 50;
+    int featherPrice = 40;
 
     public static HerbManager instance;
 
@@ -145,5 +147,10 @@ public class HerbManager : MonoBehaviour
             InfoTextPopupManager.instance.SpawnInfoTextPopup("Bought a magic feather");
             SpawnHerb(5);
         }
+    }
+
+    public Sprite GetQuestionMarkSprite()
+    {
+        return questionMarkSprite;
     }
 }

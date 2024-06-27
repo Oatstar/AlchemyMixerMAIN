@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BlueberryPA_0: 5284629560294506167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cauldronpixel_0: 5179821928149718141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
