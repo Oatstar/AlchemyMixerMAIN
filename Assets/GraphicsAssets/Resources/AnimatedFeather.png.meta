@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 6d3723466a25a3848bdc98d404b94033
+guid: cac7b0e198e6e984eb40645e4222499f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7054133715503150829
-    second: Trgkcx_0
+      213: 3253803726630238943
+    second: AnimatedFeather_0
   - first:
-      213: -41816799512982988
-    second: Trgkcx_1
+      213: 37387294879182832
+    second: AnimatedFeather_1
   - first:
-      213: -7911786645978683703
-    second: Trgkcx_2
+      213: 6188395601100541921
+    second: AnimatedFeather_2
   - first:
-      213: -2275458764569413080
-    second: Trgkcx_3
+      213: -5398134254976288695
+    second: AnimatedFeather_3
   - first:
-      213: 3588786294152915170
-    second: Trgkcx_4
+      213: -8504019684428608422
+    second: AnimatedFeather_4
   - first:
-      213: -3126525433879163518
-    second: Trgkcx_5
+      213: 5007040520418259254
+    second: AnimatedFeather_5
   - first:
-      213: -1941421558856172551
-    second: Trgkcx_6
+      213: -4690717902305361911
+    second: AnimatedFeather_6
   - first:
-      213: -8829140603351194460
-    second: Trgkcx_7
+      213: 915718319839625331
+    second: AnimatedFeather_7
   - first:
-      213: -2110865392089853285
-    second: Trgkcx_8
+      213: 1429875119311029641
+    second: AnimatedFeather_8
   - first:
-      213: -7520213190415489498
-    second: Trgkcx_9
+      213: -1313177647065290850
+    second: AnimatedFeather_9
   - first:
-      213: -5483551191074085381
-    second: Trgkcx_10
+      213: -5107236276627854065
+    second: AnimatedFeather_10
   - first:
-      213: 604092569700174429
-    second: Trgkcx_11
+      213: 1260731494300225660
+    second: AnimatedFeather_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -159,7 +159,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trgkcx_0
+      name: AnimatedFeather_0
       rect:
         serializedVersion: 2
         x: 2
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 319045992ceaa1e90800000000000000
-      internalID: -7054133715503150829
+      spriteID: fda33aeff35d72d20800000000000000
+      internalID: 3253803726630238943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_1
+      name: AnimatedFeather_1
       rect:
         serializedVersion: 2
         x: 39
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43a8267a7df6b6ff0800000000000000
-      internalID: -41816799512982988
+      spriteID: 0ffe26eeb83d48000800000000000000
+      internalID: 37387294879182832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_2
+      name: AnimatedFeather_2
       rect:
         serializedVersion: 2
         x: 77
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c6e2c3c6ffa33290800000000000000
-      internalID: -7911786645978683703
+      spriteID: 1ef003df20991e550800000000000000
+      internalID: 6188395601100541921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_3
+      name: AnimatedFeather_3
       rect:
         serializedVersion: 2
         x: 114
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82a7acc3f42fb60e0800000000000000
-      internalID: -2275458764569413080
+      spriteID: 9483542ee79f515b0800000000000000
+      internalID: -5398134254976288695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_4
+      name: AnimatedFeather_4
       rect:
         serializedVersion: 2
         x: 149
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e866cdce1eedc130800000000000000
-      internalID: 3588786294152915170
+      spriteID: a5c04ba3727abf980800000000000000
+      internalID: -8504019684428608422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_5
+      name: AnimatedFeather_5
       rect:
         serializedVersion: 2
         x: 184
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28d8864dea95c94d0800000000000000
-      internalID: -3126525433879163518
+      spriteID: 631748b23d49c7540800000000000000
+      internalID: 5007040520418259254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_6
+      name: AnimatedFeather_6
       rect:
         serializedVersion: 2
         x: 220
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fbb719d06fae05e0800000000000000
-      internalID: -1941421558856172551
+      spriteID: 900068b9be837eeb0800000000000000
+      internalID: -4690717902305361911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_7
+      name: AnimatedFeather_7
       rect:
         serializedVersion: 2
         x: 256
@@ -320,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4a426496667987580800000000000000
-      internalID: -8829140603351194460
+      spriteID: 370cb50d5f845bc00800000000000000
+      internalID: 915718319839625331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_8
+      name: AnimatedFeather_8
       rect:
         serializedVersion: 2
         x: 291
@@ -341,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9291d71c13b4b2e0800000000000000
-      internalID: -2110865392089853285
+      spriteID: 98504bf58dfe7d310800000000000000
+      internalID: 1429875119311029641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_9
+      name: AnimatedFeather_9
       rect:
         serializedVersion: 2
         x: 328
@@ -362,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 626e31672f5d2a790800000000000000
-      internalID: -7520213190415489498
+      spriteID: e97a0b333e7a6cde0800000000000000
+      internalID: -1313177647065290850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_10
+      name: AnimatedFeather_10
       rect:
         serializedVersion: 2
         x: 364
@@ -383,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf5eb5cae3386e3b0800000000000000
-      internalID: -5483551191074085381
+      spriteID: f0dab9b6aa37f19b0800000000000000
+      internalID: -5107236276627854065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trgkcx_11
+      name: AnimatedFeather_11
       rect:
         serializedVersion: 2
         x: 400
@@ -404,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5a8e64ddfa226800800000000000000
-      internalID: 604092569700174429
+      spriteID: c7099ea4d940f7110800000000000000
+      internalID: 1260731494300225660
       vertices: []
       indices: 
       edges: []
@@ -421,18 +421,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Trgkcx_0: -7054133715503150829
-      Trgkcx_1: -41816799512982988
-      Trgkcx_10: -5483551191074085381
-      Trgkcx_11: 604092569700174429
-      Trgkcx_2: -7911786645978683703
-      Trgkcx_3: -2275458764569413080
-      Trgkcx_4: 3588786294152915170
-      Trgkcx_5: -3126525433879163518
-      Trgkcx_6: -1941421558856172551
-      Trgkcx_7: -8829140603351194460
-      Trgkcx_8: -2110865392089853285
-      Trgkcx_9: -7520213190415489498
+      AnimatedFeather_0: 3253803726630238943
+      AnimatedFeather_1: 37387294879182832
+      AnimatedFeather_10: -5107236276627854065
+      AnimatedFeather_11: 1260731494300225660
+      AnimatedFeather_2: 6188395601100541921
+      AnimatedFeather_3: -5398134254976288695
+      AnimatedFeather_4: -8504019684428608422
+      AnimatedFeather_5: 5007040520418259254
+      AnimatedFeather_6: -4690717902305361911
+      AnimatedFeather_7: 915718319839625331
+      AnimatedFeather_8: 1429875119311029641
+      AnimatedFeather_9: -1313177647065290850
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

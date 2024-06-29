@@ -56,6 +56,14 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             {
                 eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
             }
+            else if (this.tag == "Workstation" && eventData.pointerDrag.tag != "Ingredient")
+            {
+                eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
+            }
+            else if (this.tag == "Pot" && eventData.pointerDrag.tag != "Ingredient")
+            {
+                eventData.pointerDrag.transform.GetComponent<DragDrop>().ReturnToOriginalSlot();
+            }
             else
             {
                 DropIntoSlot(eventData.pointerDrag);
@@ -82,7 +90,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             item.transform.SetSiblingIndex(2);
             GetComponent<WorkstationController>().ItemDroppedToWorkstation(item);
         }
-        else if (this.tag == "Pot")
+        else if (this.tag == "Pot" && item.tag == "Ingredient")
         {
             slotFull = false;
             GetComponent<PotController>().AddIngredient(item);
@@ -101,6 +109,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             TrashcanScript.instance.TrashItem(item);
             slotFull = false;
         }
+
     }
 
 

@@ -28,6 +28,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }   
 
     public void OnBeginDrag(PointerEventData eventData) {
+
+
         //Debug.Log("OnBeginDrag");
         originalParent = this.transform.parent.gameObject;
 
@@ -54,13 +56,18 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
     }
 
+
+
     public void OnDrag(PointerEventData eventData) {
         //Debug.Log("OnDrag");
+
+
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        //Debug.Log("OnEndDrag");
+
+            //Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 

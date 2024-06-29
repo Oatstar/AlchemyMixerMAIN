@@ -17,6 +17,8 @@ public class BottledPotionController : MonoBehaviour
     [SerializeField] List<int> usedHerbs = new List<int> { };
     [SerializeField] List<int> usedHerbStates = new List<int> { };
 
+    [SerializeField] GameObject featherIcon;
+
     [SerializeField] RequestedPotion thisPotionData; 
 
     public void CacheReadyPotionData(RequestedPotion newPot)
@@ -37,6 +39,15 @@ public class BottledPotionController : MonoBehaviour
         bottleBaseImage.sprite = bottleBaseSprites[UnityEngine.Random.Range(0, bottleBaseSprites.Length)];
         bottleCorkImage.sprite = bottleCorkSprites[UnityEngine.Random.Range(0, bottleCorkSprites.Length)];
         bottleBaseImage.color = bottleColors[UnityEngine.Random.Range(0, bottleColors.Length)];
+
+        if(thisPotionData.potionName == "Potion of Flight")
+        {
+            featherIcon.SetActive(true);
+        }
+        else
+        {
+            featherIcon.SetActive(false);
+        }
     }
 
     public RequestedPotion GetRequestedPotionData()
